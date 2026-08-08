@@ -1,0 +1,202 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,c
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+#   For a library or package, you might want to ignore these files since they are
+#   intended to be used in development environment only.
+.python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in some cases, project owners wish to ignore Pipfile.lock.
+#   Pipfile.lock
+
+# Poetry
+#   Similar to Pipfile.lock, it is generally recommended to ignore poetry.lock in libraries.
+#   However, for applications, it's good to commit poetry.lock.
+#   poetry.lock
+
+# pdm
+#   Similar to Pipfile.lock, it is generally recommended to ignore pdm.lock in libraries.
+#   # pdm.lock
+#   .pdm.toml
+
+# PEP 582; used by e.g. github.com/python-poetry/poetry-core
+__pypackages__
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.gen.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+.dirname
+
+# MyPy
+.mypy_backend_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+Cygwin_*.dll
+
+# JetBrains PyCharm
+.idea/
+
+# Node / React
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Production builds
+/frontend/dist/
+/frontend/build/
+
+# Android / Android Studio
+# Built application files
+*.apk
+*.ap_
+*.aab
+
+# Files for the Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+out/
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc.)
+local.properties
+
+# Log files
+*.log
+
+# Android Studio Navigation editor temp files
+.navigation/
+
+# Android Studio captures folder
+captures/
+
+# IntelliJ project files
+*.iml
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/gradle.xml
+.idea/compiler.xml
+.idea/jarRepositories.xml
+
+# Keystore files
+*.jks
+*.keystore
+
+# External native build folder
+.externalNativeBuild
+.netrigger
