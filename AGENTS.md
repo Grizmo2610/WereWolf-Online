@@ -1,12 +1,12 @@
-# AI Context & Developer Guide — Werewolf Online (Sói Già Online)
+# AGENTS.md — Instructions & Context for AI Coding Assistants
 
-> **Quick Context for AI Assistants:** Read this file to instantly understand the architecture, tech stack, game mechanics, and coding conventions of Werewolf Online without reading the entire repository.
+> **Notice for AI Agents:** Read this file to instantly understand the architecture, tech stack, game mechanics, and coding conventions of Werewolf Online without reading the entire repository.
 
 ---
 
 ## 1. Project Overview & Architecture
 
-**Werewolf Online** is a real-time multiplayer social deduction game (Werewolf / Mafia) where real human players connect to game rooms via web browsers or the Android app using room codes.
+**Werewolf Online** is a real-time multiplayer social deduction game (Werewolf / Mafia) where human players connect to game rooms via web browsers or Android app using room codes.
 
 - **Host:** A regular player who sits at a seat, configures scenarios, and starts the match. No separate admin role.
 - **Core Loop:** Night Actions (simultaneous, max 60s) $\rightarrow$ Day Discussion (5 min, early skip enabled after 3m) $\rightarrow$ Voting (max 60s) $\rightarrow$ Repeat until win condition met.
@@ -19,7 +19,16 @@
 
 ---
 
-## 2. Code Style & Conventions (`design/09_code_style.md`)
+## 2. Core Architecture Rules
+
+1. **Backend as Source of Truth:** Secret roles are sent via WebSocket exclusively to the target player's device. The backend maintains the authoritative `GameState`. Frontend renders events and never accesses other players' roles.
+2. **Server Overload Protection:** `room_manager.py` checks CPU (<85%) and memory (<80%) before accepting connections or creating rooms.
+3. **State Persistence:** Game state snapshots are saved to Cloudflare D1 at phase ends, allowing hosts to resume after server restarts.
+4. **Mention Highlighting:** `@seat_id` or display name mentions are parsed entirely client-side via React hooks (`useMentionHighlight.js`).
+
+---
+
+## 3. Code Style & Conventions (`design/09_code_style.md`)
 
 ### Language Rules
 - **UI text, messages, toasts, banners:** Vietnamese.
@@ -40,15 +49,6 @@
 - **Python:** `snake_case` for variables/functions, `PascalCase` for classes, `UPPER_SNAKE_CASE` for constants. File names: `snake_case.py`.
 - **JavaScript/React:** `camelCase` for variables/functions, `PascalCase` for components (`.jsx`), custom hooks start with `use`.
 - **No abbreviations:** Use clear names (`can_accept_connection()` instead of `chk_conn()`).
-
----
-
-## 3. Core Architecture Rules
-
-1. **Backend as Source of Truth:** Secret roles are sent via WebSocket only to the specific player's device. Frontend renders events and never accesses other players' roles.
-2. **Server Overload Protection:** `room_manager.py` checks CPU (<85%) and memory (<80%) before accepting connections or creating rooms.
-3. **State Persistence:** Game state snapshots are saved to Cloudflare D1 at phase ends, allowing hosts to resume after server restarts.
-4. **Mention Highlighting:** `@seat_id` or display name mentions are parsed entirely client-side via React hooks (`useMentionHighlight.js`).
 
 ---
 
