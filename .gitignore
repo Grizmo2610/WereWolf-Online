@@ -70,6 +70,7 @@ docs/_build/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+*.ipynb
 
 # pyenv
 #   For a library or package, you might want to ignore these files since they are
@@ -200,3 +201,13 @@ captures/
 # External native build folder
 .externalNativeBuild
 .netrigger
+
+
+design/
+
+*.csv
+*.sql
+# Database files
+*.db
+*.sqlite
+*.sqlite3

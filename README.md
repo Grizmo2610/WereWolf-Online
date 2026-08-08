@@ -11,7 +11,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Grizmo2610/WereWolf-Online">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/Werewolf-logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Werewolf Online (Sói Già Online)</h3>
