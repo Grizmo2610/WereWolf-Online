@@ -52,6 +52,19 @@ The project features a robust multi-platform architecture:
 * **Cross-Platform Support**: Accessible via web browsers and native Android application.
 * **Comprehensive Design Docs**: Fully specified architecture and game mechanics in the `design/` folder.
 
+## AI Context & Developer Guidelines
+
+For AI assistants and developers contributing to this project, here is the quick architectural and style context:
+
+* **Backend Source of Truth:** Secret roles are transmitted via WebSocket exclusively to the target player's device. The backend maintains the authoritative `GameState`.
+* **Server Overload Protection:** `room_manager.py` verifies CPU (<85%) and memory (<80%) thresholds before accepting room creations or connections.
+* **Code Style & Conventions:**
+  * **UI text, messages, toasts:** Vietnamese.
+  * **Code (variables, functions, classes, comments):** English.
+  * **Design & documentation docs:** Vietnamese.
+  * **Minimal comments:** Focus on *why*, not *what*.
+  * **Function separation:** 1 function = 1 responsibility.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
@@ -136,10 +149,10 @@ Open the `android/` directory in **Android Studio**, wait for Gradle sync to com
 
 ## Roadmap
 
-* [x] System architecture and design documentation
-* [x] Python backend & WebSocket game engine setup
-* [x] React web frontend skeleton
-* [x] Android Studio mobile app structure
+* [ ] System architecture and design documentation
+* [ ] Python backend & WebSocket game engine setup
+* [ ] React web frontend skeleton
+* [ ] Android Studio mobile app structure
 * [ ] Full role ability implementation (Seer, Witch, Guard, etc.)
 * [ ] User authentication & statistics tracking
 * [ ] Polished UI/UX animations and sound effects
