@@ -7,7 +7,7 @@ import { pathToFileURL } from 'url';
   const page = await browser.newPage();
   await page.setViewport({ width: 1280, height: 800 });
   
-  const htmlPath = path.resolve('html_export/index.html');
+  const htmlPath = path.resolve('html_export/game.html');
   const fileUrl = pathToFileURL(htmlPath).href;
   
   console.log('Loading URL:', fileUrl);
@@ -20,5 +20,5 @@ import { pathToFileURL } from 'url';
   await new Promise(r => setTimeout(r, 2000));
   await page.screenshot({ path: 'images/screenshot.png', fullPage: true });
   await browser.close();
-  console.log('Screenshot updated successfully from html_export/index.html to images/screenshot.png');
+  console.log('Screenshot updated successfully from html_export/game.html to images/screenshot.png');
 })();
