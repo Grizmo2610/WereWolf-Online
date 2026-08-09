@@ -1,17 +1,24 @@
 import puppeteer from 'puppeteer';
+import path from 'path';
+import { pathToFileURL } from 'url';
 
 (async () => {
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
   await page.setViewport({ width: 1280, height: 800 });
+  
+  const htmlPath = path.resolve('html_export/index.html');
+  const fileUrl = pathToFileURL(htmlPath).href;
+  
+  console.log('Loading URL:', fileUrl);
   try {
-    await page.goto('http://localhost:5173', { waitUntil: 'networkidle0', timeout: 10000 });
+    await page.goto(fileUrl, { waitUntil: 'load', timeout: 15000 });
   } catch (e) {
-    console.log('Could not connect to localhost:5173, taking screenshot of fallback or current page');
+    console.log('Error navigating to local html:', e.message);
   }
-  // Wait a bit for any animations/renders
+  
   await new Promise(r => setTimeout(r, 2000));
-  await page.screenshot({ path: '../images/screenshot.png', fullPage: true });
+  await page.screenshot({ path: 'images/screenshot.png', fullPage: true });
   await browser.close();
-  console.log('Screenshot saved to images/screenshot.png');
+  console.log('Screenshot updated successfully from html_export/index.html to images/screenshot.png');
 })();
