@@ -1,125 +1,81 @@
+<!-- Improved compatibility of back to top link -->
+
 <a id="readme-top"></a>
 
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![project\_license][license-shield]][license-url]
+
+<br />
 <div align="center">
   <a href="https://github.com/Grizmo2610/WereWolf-Online">
-    <img src="frontend/src/assets/images/Werewolf-logo.png" alt="Logo" width="80" height="80">
+    <img src="images/Werewolf-logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Werewolf Online (Sói Già Online)</h3>
 
   <p align="center">
-    Trò chơi Ma Sói trực tuyến thời gian thực (Real-time Multiplayer Social Deduction Party Game)
+    Real-time multiplayer social deduction party game — Werewolf / Mafia
     <br />
-    <a href="design/00_overview_and_architecture.md"><strong>Khám phá tài liệu thiết kế »</strong></a>
+    <a href="design/00_overview_and_architecture.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Grizmo2610/WereWolf-Online">Xem Demo</a>
+    <a href="https://github.com/Grizmo2610/WereWolf-Online">View Demo</a>
     &middot;
-    <a href="https://github.com/Grizmo2610/WereWolf-Online/issues">Báo lỗi</a>
+    <a href="https://github.com/Grizmo2610/WereWolf-Online/issues/new?labels=bug&template=bug-report.md">Report Bug</a>
     &middot;
-    <a href="https://github.com/Grizmo2610/WereWolf-Online/issues">Đề xuất tính năng</a>
+    <a href="https://github.com/Grizmo2610/WereWolf-Online/issues/new?labels=enhancement&template=feature-request.md">Request Feature</a>
   </p>
 </div>
 
 ---
 
-## 📖 Giới Thiệu Dự Án
+## About The Project
 
-**Werewolf Online** là tựa game Ma Sói trực tuyến đa nền tảng thời gian thực, nơi người chơi vào vai dân làng hoặc bầy sói tham gia suy luận, biện luận và bỏ phiếu loại trừ thế lực hắc ám.
+[![Product Name Screen Shot][product-screenshot]](https://github.com/Grizmo2610/WereWolf-Online)
 
-Dự án được xây dựng với kiến trúc hiện đại và tách biệt rõ ràng:
-1. **Backend (`/backend`)**: FastAPI (Python) & WebSocket server hiệu năng cao quản lý phòng chơi, vòng lặp trò chơi và phân quyền bảo mật.
-2. **Frontend (`/frontend`)**: Giao diện web hiện đại xây dựng bằng React 18, Vite, Tailwind CSS và Zustand state management.
-3. **Android App (`/android`)**: Ứng dụng di động native viết bằng Kotlin và Jetpack Compose.
-4. **Tài liệu thiết kế (`/design`)**: Bộ tài liệu đặc tả chi tiết từ kiến trúc hệ thống, cơ chế game, database, giao thức WebSocket cho đến UI/UX.
+**Werewolf Online** is a real-time multiplayer social deduction party game where villagers and werewolves battle in real-time. Players are assigned secret roles, engage in discussions, and vote to eliminate suspected werewolves before night falls and claims another victim.
 
----
+The project features a robust multi-platform architecture:
+1. **Python Backend (`/backend`)**: High-performance FastAPI & WebSocket server managing game rooms, state transitions, and rules with server overload protection.
+2. **React Web Frontend (`/frontend`)**: Modern web client built with Vite and Tailwind CSS for seamless browser play.
+3. **Android Mobile App (`/android`)**: Native Android application built with Kotlin and Jetpack Compose.
+4. **Design Specifications (`/design`)**: Comprehensive system design documents covering architecture, game engine, database, WebSocket protocols, authentication, and UI/UX.
 
-## ✨ Tính Năng Chính
+### Core Features
 
-* **Đa người chơi thời gian thực (Real-time Multiplayer):** Đồng bộ hóa tức thì các hành động đêm, thảo luận ngày và bỏ phiếu qua WebSocket.
-* **Hệ thống Vai trò phong phú:** Sói, Tiên Tri, Bảo Vệ, Phù Thủy, Dân Làng và các vai trò đặc biệt khác.
-* **Chu kỳ Ngày / Đêm tự động:** Chuyển đổi pha mượt mà với bộ đếm thời gian (timer bounds) và cơ chế bỏ phiếu linh hoạt.
-* **Bảo vệ Quá tải Server (`room_manager.py`):** Kiểm tra tài nguyên CPU (<85%) và RAM (<80%) trước khi cho phép tạo phòng hoặc kết nối mới.
-* **Đa nền tảng:** Hỗ trợ trình duyệt web và ứng dụng Android.
+* **Real-time Multiplayer**: Powered by Python WebSockets for instant synchronization across devices.
+* **Role Management**: Villagers, Werewolves, Seer, Bodyguard, Witch, and more.
+* **Day & Night Cycles**: Automated phase transitions with timer indicators and voting logic.
+* **Server Overload Protection**: `room_manager.py` verifies CPU (<85%) and memory (<80%) thresholds before accepting room creations or connections.
+* **Cross-Platform Support**: Accessible via web browsers and native Android application.
 
----
-
-## 📚 Tài Liệu Hệ Thống
-
-Toàn bộ tài liệu thiết kế chi tiết nằm trong thư mục `design/`:
-* 🏛️ [Tổng quan & Kiến trúc](design/00_overview_and_architecture.md)
-* 🐺 [Nhân vật & Vai trò](design/01_characters.md)
-* 📜 [Kịch bản & Luật chơi](design/02_scenarios.md)
-* ⚙️ [Động cơ Trò chơi (Game Engine)](design/03_game_engine.md)
-* 🔐 [Xác thực & Bảo mật (Auth)](design/04_auth.md)
-* 🗄️ [Cấu trúc Cơ sở dữ liệu](design/05_database.md)
-* 🔌 [Giao thức WebSocket](design/06_websocket.md)
-* 🎨 [Thiết kế UI/UX](design/07_ui.md)
-* ☁️ [Hạ tầng & Triển khai (Infrastructure)](design/08_infrastructure.md)
-* 📝 [Quy chuẩn Mã nguồn (Code Style)](design/09_code_style.md)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
-## 🚀 Hướng Dẫn Cài Đặt & Chạy Ứng Dụng
+## Documentation
 
-### Yêu Cầu Hệ Thống
-* Python 3.10+
-* Node.js 18+ & npm / yarn
-* Android Studio (Flamingo hoặc mới hơn) kèm Android SDK (nếu chạy bản Android)
+Explore the system design and architecture documents:
+* 🏛️ [Overview & Architecture](design/00_overview_and_architecture.md)
+* 🐺 [Characters & Roles](design/01_characters.md)
+* 📜 [Scenarios & Rules](design/02_scenarios.md)
+* ⚙️ [Game Engine](design/03_game_engine.md)
+* 🔐 [Authentication](design/04_auth.md)
+* 🗄️ [Database Schema](design/05_database.md)
+* 🔌 [WebSocket Protocol](design/06_websocket.md)
+* 🎨 [UI/UX Design](design/07_ui.md)
+* ☁️ [Infrastructure](design/08_infrastructure.md)
+* 📝 [Code Style](design/09_code_style.md)
+* 📋 [Changelog](CHANGELOG.md)
 
-### 1. Clone Kho Mã Nguồn
-```bash
-git clone https://github.com/Grizmo2610/WereWolf-Online.git
-cd WereWolf-Online
-```
-
-### 2. Chạy Backend (Python FastAPI)
-Mở terminal tại thư mục gốc và chạy các lệnh sau:
-```bash
-cd backend
-python -m venv venv
-
-# Trên Windows (PowerShell/CMD):
-venv\Scripts\activate
-
-# Trên macOS / Linux:
-# source venv/bin/activate
-
-# Cài đặt thư viện phụ thuộc
-pip install -r requirements.txt
-
-# Khởi động server FastAPI (chạy port 8000)
-python -m uvicorn main:app --reload --port 8000
-```
-Server backend sẽ chạy tại: `http://localhost:8000` (Tài liệu API Swagger tại `http://localhost:8000/docs`).
-
-### 3. Chạy Frontend (React Web Client)
-Mở một terminal mới và chạy các lệnh sau:
-```bash
-cd frontend
-
-# Cài đặt các gói npm
-npm install
-
-# Tạo file cấu hình môi trường (.env)
-echo "VITE_API_BASE=http://localhost:8000" > .env
-
-# Chạy ứng dụng web ở chế độ phát triển (Development)
-npm run dev
-```
-Ứng dụng web sẽ chạy tại: `http://localhost:5173` (hoặc cổng hiển thị trên terminal).
-
-### 4. Chạy Ứng Dụng Android
-1. Mở phần mềm **Android Studio**.
-2. Chọn **Open** và dẫn tới thư mục `android/` trong dự án.
-3. Đợi Gradle đồng bộ hóa xong (Gradle Sync).
-4. Kết nối thiết bị Android thật hoặc khởi động Android Emulator (API 24+).
-5. Nhấn nút **Run** (▶) để biên dịch và chạy ứng dụng trên thiết bị.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
-## 🛠️ Công Nghệ Sử Dụng
+## Built With
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white" />
@@ -131,11 +87,146 @@ npm run dev
   <img src="https://img.shields.io/badge/TailwindCSS-Styling-38Bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white" />
 </p>
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ---
 
-## 📄 Giấy Phép
-Phân phối dưới giấy phép MIT. Xem file [LICENSE](LICENSE) để biết thêm chi tiết.
+## Getting Started & Installation
 
-## 👥 Tác Giả & Liên Hệ
-* **Grizmo2610** - [GitHub Profile](https://github.com/Grizmo2610)
-* Link dự án: [https://github.com/Grizmo2610/WereWolf-Online](https://github.com/Grizmo2610/WereWolf-Online)
+### Prerequisites
+
+* Python 3.10+
+* Node.js 18+ & npm / yarn
+* Android Studio (Flamingo or newer) with Android SDK
+
+### 1. Clone the Repository
+
+```sh
+git clone https://github.com/Grizmo2610/WereWolf-Online.git
+```
+
+2. Open the project folder
+
+```sh
+cd WereWolf-Online
+```
+
+### 2. Run the Backend (Python FastAPI)
+
+```bash
+cd backend
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+# macOS/Linux:
+# source venv/bin/activate
+pip install -r requirements.txt
+python -m uvicorn main:app --reload --port 8000
+```
+
+### 3. Run the Frontend (React Web Client)
+
+```bash
+cd frontend
+npm install
+echo "VITE_API_BASE=http://localhost:8000" > .env
+npm run dev
+```
+
+### 4. Run the Android App
+
+Open the `android/` directory in **Android Studio**, wait for Gradle sync to complete, and run the app on an emulator or physical device.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## Usage
+
+### Game Flow
+
+1. **Host Setup** — Host creates a room, configures scenarios and roles.
+2. **Joining** — Players join via room code and take seats.
+3. **Night Phase** — Secret night actions (Werewolves hunt, Seer inspects, Bodyguard protects, Witch heals/poisons).
+4. **Day Phase** — Discussion and player debate (with early skip support).
+5. **Voting** — Players vote to eliminate a suspected werewolf.
+6. **Victory Condition** — Game repeats until all werewolves are eliminated (Villagers win) or werewolves equal/outnumber villagers (Werewolves win).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## Roadmap
+
+* [x] System architecture and design documentation
+* [x] Python backend & WebSocket game engine setup
+* [x] React web frontend skeleton & state stores
+* [x] Android Studio mobile app structure
+* [x] Full role ability implementation (Seer, Witch, Guard, etc.)
+* [x] User authentication & statistics tracking
+* [ ] Polished UI/UX animations and sound effects
+* [ ] Production cloud deployment (Render + Cloudflare Pages)
+
+See the [open issues](https://github.com/Grizmo2610/WereWolf-Online/issues) for a full list of proposed features and known issues.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## Contributing
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+### Top Contributors:
+
+<a href="https://github.com/Grizmo2610/WereWolf-Online/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Grizmo2610/WereWolf-Online" />
+</a>
+
+---
+
+## License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## Contact
+
+Grizmo2610 - [hoangtuantu893@gmail.com](mailto:hoangtuantu893@gmail.com)
+
+Project Link: [https://github.com/Grizmo2610/WereWolf-Online](https://github.com/Grizmo2610/WereWolf-Online)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## Acknowledgments
+
+* Classic Werewolf / Mafia party game rules
+* FastAPI & Python ecosystem
+* React & Android developer communities
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+[contributors-shield]: https://img.shields.io/github/contributors/Grizmo2610/WereWolf-Online.svg?style=for-the-badge
+[contributors-url]: https://github.com/Grizmo2610/WereWolf-Online/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Grizmo2610/WereWolf-Online.svg?style=for-the-badge
+[forks-url]: https://github.com/Grizmo2610/WereWolf-Online/network/members
+[stars-shield]: https://img.shields.io/github/stars/Grizmo2610/WereWolf-Online.svg?style=for-the-badge
+[stars-url]: https://github.com/Grizmo2610/WereWolf-Online/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Grizmo2610/WereWolf-Online.svg?style=for-the-badge
+[issues-url]: https://github.com/Grizmo2610/WereWolf-Online/issues
+[license-shield]: https://img.shields.io/github/license/Grizmo2610/WereWolf-Online.svg?style=for-the-badge
+[license-url]: https://github.com/Grizmo2610/WereWolf-Online/blob/main/LICENSE
+[product-screenshot]: images/screenshot.png
