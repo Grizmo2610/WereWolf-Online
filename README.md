@@ -161,11 +161,11 @@ Open the `android/` directory in **Android Studio**, wait for Gradle sync to com
 * [x] System architecture and design documentation
 * [x] Python backend & WebSocket game engine setup
 * [x] React web frontend skeleton & state stores
-* [x] Android Studio mobile app structure
 * [x] Full role ability implementation (Seer, Witch, Guard, etc.)
-* [x] User authentication & statistics tracking
+* [ ] User authentication & statistics tracking
 * [ ] Polished UI/UX animations and sound effects
 * [ ] Production cloud deployment (Render + Cloudflare Pages)
+* [ ] Android Studio mobile app structure
 
 See the [open issues](https://github.com/Grizmo2610/WereWolf-Online/issues) for a full list of proposed features and known issues.
 
