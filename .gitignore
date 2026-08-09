@@ -203,7 +203,9 @@ captures/
 .netrigger
 
 
-design/
+# design/
+html_export/
+claudes/
 
 *.csv
 *.sql
@@ -211,3 +213,5 @@ design/
 *.db
 *.sqlite
 *.sqlite3
+
+*.zip
