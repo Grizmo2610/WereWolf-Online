@@ -72,3 +72,7 @@ WereWolf/
 ├── android/              # Native Android App (Kotlin / Jetpack Compose)
 └── design/               # Detailed design specifications (00 to 09)
 ```
+
+## 5. Commit and git
+
+DO NOT Commit anything except have user command. Only commit what user command, 
