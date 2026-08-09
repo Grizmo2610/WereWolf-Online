@@ -73,6 +73,9 @@ WereWolf/
 └── design/               # Detailed design specifications (00 to 09)
 ```
 
-## 5. Commit and git
+## 5. Commit and Git
 
-DO NOT Commit anything except have user command. Only commit what user command, 
+* DO NOT commit changes automatically.
+* Only commit when the user explicitly asks you to commit.
+* If the user does not explicitly request a commit, make the required changes and stop.
+* Never create a commit as part of another task unless explicitly instructed.
